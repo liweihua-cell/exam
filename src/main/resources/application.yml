@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: dev
+  datasource:
+    username: root
+    password: yuantu123
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/mybatis?serverTimezone=GMT%2B8&characterEncoding=UTF-8&allowMultiQueries=true
+  redis:
+    port: 6379
+    host: 127.0.0.1
+    database: 0
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 1ms
+        max-idle: 8
+        min-idle: 0
+    connect-timeout: 2000ms
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/mongodb
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 0 //已删除
+      logic-not-delete-value: 1 //未删除
